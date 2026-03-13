@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AlpinTools — Outils outdoor Mont-Blanc</title>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:wght@300;400;500;600&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root{--glacier:#4ECDC4;--summit:#1B4332;--alpine:#2D6A4F;--snow:#F8FAF9;--mist:#E8F0EC;--rock:#2C3E35;--ice:#D8F3DC;}
+*{margin:0;padding:0;box-sizing:border-box;}
+body{font-family:'DM Sans',sans-serif;background:var(--snow);color:var(--rock);}
+nav{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;justify-content:space-between;align-items:center;padding:16px 24px;background:rgba(27,67,50,0.95);backdrop-filter:blur(10px);}
+.logo{display:flex;align-items:center;gap:10px;text-decoration:none;}
+.logo-icon{width:36px;height:36px;background:var(--glacier);border-radius:8px;display:flex;align-items:center;justify-content:center;font-size:18px;}
+.logo-text{font-family:'Bebas Neue',cursive;font-size:24px;color:white;letter-spacing:1px;}
+.nav-links{display:flex;gap:24px;align-items:center;}
+.nav-links a{color:rgba(255,255,255,0.8);text-decoration:none;font-size:14px;font-weight:500;}
+.nav-cta{background:var(--glacier)!important;color:var(--summit)!important;padding:8px 18px;border-radius:20px;font-weight:600!important;}
+</style>
+<style>
+.hero{min-height:100vh;background:linear-gradient(135deg,var(--summit) 0%,var(--alpine) 60%,#1a5c3a 100%);display:flex;align-items:center;justify-content:center;text-align:center;padding:100px 24px 60px;}
+.hero-badge{display:inline-block;background:rgba(78,205,196,0.2);border:1px solid var(--glacier);color:var(--glacier);padding:6px 16px;border-radius:20px;font-size:13px;font-weight:500;margin-bottom:24px;}
+.hero h1{font-family:'Bebas Neue',cursive;font-size:clamp(48px,10vw,96px);color:white;line-height:1;margin-bottom:20px;letter-spacing:2px;}
+.hero p{font-size:18px;color:rgba(255,255,255,0.8);max-width:560px;margin:0 auto 40px;line-height:1.6;}
+.hero-btns{display:flex;gap:16px;justify-content:center;flex-wrap:wrap;}
+.btn-primary{background:var(--glacier);color:var(--summit);padding:14px 32px;border-radius:30px;font-weight:700;font-size:15px;border:none;cursor:pointer;text-decoration:none;display:inline-block;}
+.btn-outline{background:transparent;color:white;padding:14px 32px;border-radius:30px;font-weight:600;font-size:15px;border:2px solid rgba(255,255,255,0.4);cursor:pointer;text-decoration:none;display:inline-block;}
+.stats{display:flex;gap:40px;justify-content:center;margin-top:60px;flex-wrap:wrap;}
+.stat-num{font-family:'Bebas Neue',cursive;font-size:42px;color:var(--glacier);}
+.stat-label{font-size:13px;color:rgba(255,255,255,0.6);}
+</style>
+<style>
+section{padding:80px 24px;}
+.section-title{font-family:'Bebas Neue',cursive;font-size:42px;color:var(--summit);margin-bottom:8px;}
+.section-sub{color:#666;margin-bottom:48px;font-size:16px;}
+.tools-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:24px;max-width:1100px;margin:0 auto;}
+.tool-card{background:white;border-radius:16px;padding:28px;box-shadow:0 2px 20px rgba(0,0,0,0.06);border:1px solid var(--mist);transition:transform 0.2s;}
+.tool-card:hover{transform:translateY(-4px);}
+.tool-icon{font-size:36px;margin-bottom:16px;}
+.tool-card h3{font-size:18px;font-weight:700;color:var(--summit);margin-bottom:8px;}
+.tool-card p{font-size:14px;color:#666;line-height:1.6;margin-bottom:16px;}
+.tool-badge{display:inline-block;padding:4px 12px;border-radius:12px;font-size:12px;font-weight:600;}
+.badge-free{background:var(--ice);color:var(--alpine);}
+.badge-pro{background:var(--summit);color:white;}
+.plans{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:24px;max-width:900px;margin:0 auto;}
+.plan-card{background:white;border-radius:20px;padding:32px;border:2px solid var(--mist);text-align:center;}
+.plan-card.featured{border-color:var(--glacier);background:var(--summit);color:white;}
+.plan-name{font-family:'Bebas Neue',cursive;font-size:28px;margin-bottom:8px;}
+.plan-price{font-size:48px;font-weight:800;color:var(--glacier);margin:16px 0;}
+.plan-price span{font-size:16px;font-weight:400;opacity:0.7;}
+.plan-features{list-style:none;margin:20px 0;text-align:left;}
+.plan-features li{padding:8px 0;font-size:14px;border-bottom:1px solid rgba(0,0,0,0.06);}
+.plan-features li::before{content:"✓ ";color:var(--glacier);}
+.btn-plan{width:100%;padding:14px;border-radius:30px;font-weight:700;font-size:15px;border:none;cursor:pointer;margin-top:8px;}
+.btn-plan-primary{background:var(--glacier);color:var(--summit);}
+.btn-plan-outline{background:transparent;color:var(--summit);border:2px solid var(--mist);}
+</style>
+<style>
+.sponsors{background:var(--summit);padding:80px 24px;}
+.sponsors .section-title{color:white;}
+.sponsors .section-sub{color:rgba(255,255,255,0.6);}
+.sponsor-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:24px;max-width:900px;margin:0 auto;}
+.sponsor-card{background:rgba(255,255,255,0.08);border:1px solid rgba(255,255,255,0.15);border-radius:16px;padding:28px;text-align:center;color:white;}
+.sponsor-tier{font-family:'Bebas Neue',cursive;font-size:24px;color:var(--glacier);margin-bottom:8px;}
+.sponsor-price{font-size:36px;font-weight:800;margin:12px 0;}
+.sponsor-price span{font-size:14px;font-weight:400;opacity:0.7;}
+.btn-sponsor{background:var(--glacier);color:var(--summit);padding:12px 28px;border-radius:30px;font-weight:700;border:none;cursor:pointer;margin-top:16px;}
+.modal{display:none;position:fixed;inset:0;background:rgba(0,0,0,0.7);z-index:1000;align-items:center;justify-content:center;}
+.modal.open{display:flex;}
+.modal-box{background:white;border-radius:20px;padding:40px;max-width:420px;width:90%;text-align:center;}
+.modal-title{font-family:'Bebas Neue',cursive;font-size:32px;color:var(--summit);margin-bottom:8px;}
+.modal-desc{font-size:14px;color:#666;margin-bottom:24px;}
+.modal-form{display:flex;flex-direction:column;gap:12px;}
+.modal-input{padding:12px 16px;border:2px solid var(--mist);border-radius:10px;font-size:15px;outline:none;}
+.modal-input:focus{border-color:var(--glacier);}
+.modal-success{display:none;text-align:center;padding:20px;}
+.modal-success h3{font-family:'Bebas Neue',cursive;font-size:28px;color:var(--summit);margin-bottom:8px;}
+footer{background:var(--rock);color:rgba(255,255,255,0.6);text-align:center;padding:32px 24px;font-size:14px;}
+</style>
+</head>
+<body>
+<nav>
+<a href="#" class="logo"><div class="logo-icon">⛰️</div><span class="logo-text">AlpinTools</span></a>
+<div class="nav-links">
+<a href="#outils">Outils</a>
+<a href="#tarifs">Tarifs</a>
+<a href="#sponsors">Partenaires</a>
+<a href="#" class="nav-cta" onclick="openModal('signup')">Essai gratuit</a>
+</div>
+</nav>
+<div class="hero">
+<div>
+<div class="hero-badge">🏔️ Massif du Mont-Blanc</div>
+<h1>VOS OUTILS<br>OUTDOOR<br>ALPINS</h1>
+<p>Météo alpine, planification d'itinéraires et conditions neige en temps réel pour les randonneurs et alpinistes du Mont-Blanc.</p>
+<div class="hero-btns">
+<button class="btn-primary" onclick="openModal('signup')">Commencer gratuitement</button>
+<a href="#outils" class="btn-outline">Voir les outils</a>
+</div>
+<div class="stats">
+<div><div class="stat-num">2400+</div><div class="stat-label">Utilisateurs actifs</div></div>
+<div><div class="stat-num">5</div><div class="stat-label">Outils disponibles</div></div>
+<div><div class="stat-num">98%</div><div class="stat-label">Satisfaction</div></div>
+</div>
+</div>
+</div>
+<section id="outils" style="text-align:center;">
+<div class="section-title">NOS OUTILS</div>
+<div class="section-sub">5 outils conçus pour les passionnés de montagne</div>
+<div class="tools-grid">
+<div class="tool-card"><div class="tool-icon">🌤️</div><h3>Météo Alpine</h3><p>Prévisions météo détaillées par altitude pour tous les sommets du massif du Mont-Blanc.</p><span class="tool-badge badge-free">Gratuit</span></div>
+<div class="tool-card"><div class="tool-icon">🗺️</div><h3>Planificateur de Sortie</h3><p>Créez vos itinéraires avec calcul automatique du dénivelé et estimation du temps.</p><span class="tool-badge badge-free">Gratuit</span></div>
+<div class="tool-card"><div class="tool-icon">❄️</div><h3>Conditions Neige</h3><p>Données neige en temps réel pour toutes les stations du massif. Réservé aux membres Pro.</p><span class="tool-badge badge-pro">Pro</span></div>
+<div class="tool-card"><div class="tool-icon">📍</div><h3>Générateur GPX</h3><p>Exportez vos itinéraires en format GPX compatible Garmin, Suunto et Komoot.</p><span class="tool-badge badge-pro">Pro</span></div>
+<div class="tool-card"><div class="tool-icon">🌱</div><h3>Bilan Carbone</h3><p>Calculez l'impact carbone de votre trajet pour rejoindre le massif du Mont-Blanc.</p><span class="tool-badge badge-free">Gratuit</span></div>
+</div>
+</section>
+<section id="tarifs" style="text-align:center;">
+<div class="section-title">TARIFS</div>
+<div class="section-sub">Choisissez votre plan</div>
+<div class="plans">
+<div class="plan-card"><div class="plan-name">Randonneur</div><div class="plan-price">0€<span>/mois</span></div><ul class="plan-features"><li>Météo alpine</li><li>Planificateur basique</li><li>Bilan carbone</li></ul><button class="btn-plan btn-plan-outline" onclick="openModal('signup')">Commencer gratuit</button></div>
+<div class="plan-card featured"><div class="plan-name">Alpiniste Pro</div><div class="plan-price">9€<span>/mois</span></div><ul class="plan-features"><li>Tout le plan gratuit</li><li>Conditions neige temps réel</li><li>Export GPX illimité</li><li>Support prioritaire</li></ul><button class="btn-plan btn-plan-primary" onclick="openModal('pro')">Démarrer Pro</button></div>
+<div class="plan-card"><div class="plan-name">Expert Montagne</div><div class="plan-price">19€<span>/mois</span></div><ul class="plan-features"><li>Tout le plan Pro</li><li>Alertes push personnalisées</li><li>Accès API</li><li>Badge Expert Montagne</li></ul><button class="btn-plan btn-plan-outline" onclick="openModal('expert')">Passer Expert</button></div>
+</div>
+</section>
+<div class="sponsors" id="sponsors" style="text-align:center;">
+<div class="section-title">DEVENEZ PARTENAIRE</div>
+<div class="section-sub">Touchez nos 2400+ utilisateurs passionnés d'outdoor</div>
+<div class="sponsor-grid">
+<div class="sponsor-card"><div class="sponsor-tier">Silver</div><div class="sponsor-price">200€<span>/mois</span></div><p>Logo sur le site + mention newsletter</p><button class="btn-sponsor" onclick="openModal('sponsor')">Devenir Silver</button></div>
+<div class="sponsor-card"><div class="sponsor-tier">Gold</div><div class="sponsor-price">500€<span>/mois</span></div><p>Banner homepage + article sponsorisé</p><button class="btn-sponsor" onclick="openModal('sponsor')">Devenir Gold</button></div>
+<div class="sponsor-card"><div class="sponsor-tier">Platine</div><div class="sponsor-price">1200€<span>/mois</span></div><p>Partenariat exclusif + co-branding complet</p><button class="btn-sponsor" onclick="openModal('sponsor')">Devenir Platine</button></div>
+</div>
+</div>
+<div id="modal" class="modal">
+<div class="modal-box">
+<div id="modal-content">
+<div class="modal-title" id="modal-title">CRÉER UN COMPTE</div>
+<div class="modal-desc" id="modal-desc">Accédez gratuitement à nos outils outdoor.</div>
+<form class="modal-form" id="signup-form">
+<input class="modal-input" type="text" name="nom" placeholder="Prénom et nom" required>
+<input class="modal-input" type="email" name="email" placeholder="Email" required>
+<input type="hidden" name="plan" id="form-plan" value="gratuit">
+<button type="submit" class="btn-primary" style="width:100%;padding:13px;font-size:15px;">Continuer →</button>
+</form>
+</div>
+<div class="modal-success" id="modal-success">
+<h3>🎉 Bienvenue !</h3>
+<p>Votre inscription est confirmée. Vous allez recevoir un email de confirmation.</p>
+</div>
+<button onclick="closeModal()" style="margin-top:16px;background:none;border:none;color:#999;cursor:pointer;font-size:14px;">Fermer</button>
+</div>
+</div>
+<footer>© 2025 AlpinTools — Outils outdoor Mont-Blanc · Sallanches, Haute-Savoie</footer>
+<script>
+function openModal(type){
+document.getElementById('modal-success').style.display='none';
+document.getElementById('modal-content').style.display='block';
+const titles={signup:['CRÉER UN COMPTE','Accédez gratuitement à la météo alpine, au planificateur et au bilan carbone.'],pro:['PASSER EN PRO','Débloquez les conditions neige et le GPX pour 9€/mois.'],expert:['PLAN EXPERT','Accédez aux alertes push et à l\'API pour 19€/mois.'],sponsor:['DEVENIR PARTENAIRE','Touchez nos 2400+ utilisateurs passionnés d\'outdoor.']};
+document.getElementById('modal-title').textContent=titles[type][0];
+document.getElementById('modal-desc').textContent=titles[type][1];
+document.getElementById('form-plan').value=type;
+document.getElementById('modal').classList.add('open');
+}
+function closeModal(){document.getElementById('modal').classList.remove('open');}
+document.addEventListener('DOMContentLoaded',function(){
+document.getElementById('signup-form').addEventListener('submit',async function(e){
+e.preventDefault();
+const res=await fetch('https://formspree.io/f/xreykndp',{method:'POST',body:new FormData(e.target),headers:{'Accept':'application/json'}});
+if(res.ok){document.getElementById('modal-content').style.display='none';document.getElementById('modal-success').style.display='block';setTimeout(closeModal,3000);}
+else{alert('Erreur, réessayez.');}
+});
+});
+</script>
+</body>
+</html>
