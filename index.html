@@ -1,0 +1,414 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AlpinTools — Outils outdoor Mont-Blanc</title>
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:wght@300;400;500;600&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- ========== NAVIGATION ========== -->
+<nav>
+  <div class="logo"><span class="logo-icon">⛰</span> ALPIN<span>TOOLS</span></div>
+  <div class="nav-links">
+    <a href="#outils">Outils</a>
+    <a href="#tarifs">Tarifs</a>
+    <a href="#sponsors">Partenaires</a>
+    <a href="#" class="nav-cta" onclick="openModal('signup')">Essai gratuit</a>
+  </div>
+</nav>
+
+<!-- ========== HERO ========== -->
+<div class="hero">
+  <div class="hero-badge">🏔 Massif du Mont-Blanc · Haute-Savoie</div>
+  <h1>LES OUTILS<br><span class="accent">DES</span> ALPINISTES<br><span class="gold">MODERNES</span></h1>
+  <p class="hero-sub">Planifiez, optimisez et vivez votre aventure outdoor. Météo alpine, itinéraires, conditions neige, calcul CO₂ — tout en un.</p>
+  <div class="hero-buttons">
+    <button class="btn-primary" onclick="openModal('signup')">Commencer gratuitement</button>
+    <button class="btn-outline" onclick="document.getElementById('outils').scrollIntoView({behavior:'smooth'})">Voir les outils →</button>
+  </div>
+  <div class="hero-stats">
+    <div class="stat"><div class="stat-n">5</div><div class="stat-l">Outils puissants</div></div>
+    <div class="stat"><div class="stat-n">2 400+</div><div class="stat-l">Randonneurs actifs</div></div>
+    <div class="stat"><div class="stat-n">Mont-Blanc</div><div class="stat-l">Zone couverte</div></div>
+  </div>
+</div>
+
+<!-- ========== BANDEAU SPONSORS ========== -->
+<div class="sponsor-banner">
+  <div class="sponsor-label">Partenaires officiels</div>
+  <div class="sponsor-logos">
+    <a class="sponsor-logo" href="#sponsors"><span class="sico">🎿</span> Salomon</a>
+    <a class="sponsor-logo" href="#sponsors"><span class="sico">⛺</span> Millet</a>
+    <a class="sponsor-logo" href="#sponsors"><span class="sico">🧭</span> Garmin</a>
+    <a class="sponsor-logo" href="#sponsors"><span class="sico">🏨</span> Hôtels Savoie</a>
+    <a class="sponsor-logo" href="#sponsors"><span class="sico">🚗</span> Renault Alpine</a>
+  </div>
+</div>
+
+<!-- ========== OUTILS ========== -->
+<section id="outils">
+  <div class="section-label">Fonctionnalités</div>
+  <h2 class="section-title">5 OUTILS<br>ESSENTIELS</h2>
+  <p class="section-sub">Des outils conçus pour les pratiquants outdoor de tous niveaux, du randonneur du dimanche à l'alpiniste confirmé.</p>
+
+  <div class="tools-grid">
+
+    <!-- Météo alpine -->
+    <div class="tool-card" onclick="this.classList.toggle('active-tool')">
+      <div class="tool-icon">🌤</div>
+      <span class="tool-badge badge-free">Gratuit</span>
+      <div class="tool-name">MÉTÉO ALPINE</div>
+      <div class="tool-desc">Prévisions précises par altitude (vallée / mi-pente / sommet) avec indice de danger avalanche et vent en crête.</div>
+      <div class="tool-demo">
+        <div class="weather-widget">
+          <div class="weather-header">
+            <div class="weather-loc">Aiguille du Midi</div>
+            <div class="weather-alt">3 842 m</div>
+          </div>
+          <div class="weather-main">
+            <div class="weather-temp">-8°</div>
+            <div class="weather-info">
+              <div class="weather-cond">☀️ Ensoleillé</div>
+              <div class="weather-wind">💨 Vent : 35 km/h NW</div>
+              <div class="weather-wind">❄️ Neige fraîche : 12 cm</div>
+            </div>
+          </div>
+          <div class="weather-grid">
+            <div class="weather-day"><div class="weather-day-name">Jeu</div><div class="weather-day-icon">☀️</div><div class="weather-day-temp">-6°</div></div>
+            <div class="weather-day"><div class="weather-day-name">Ven</div><div class="weather-day-icon">⛅</div><div class="weather-day-temp">-4°</div></div>
+            <div class="weather-day"><div class="weather-day-name">Sam</div><div class="weather-day-icon">🌨</div><div class="weather-day-temp">-10°</div></div>
+            <div class="weather-day"><div class="weather-day-name">Dim</div><div class="weather-day-icon">☀️</div><div class="weather-day-temp">-5°</div></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Planificateur -->
+    <div class="tool-card" onclick="this.classList.toggle('active-tool')">
+      <div class="tool-icon">🗺</div>
+      <span class="tool-badge badge-free">Gratuit</span>
+      <div class="tool-name">PLANIFICATEUR DE SORTIE</div>
+      <div class="tool-desc">Créez votre itinéraire étape par étape avec calcul du dénivelé, durée estimée et points d'eau/refuge.</div>
+      <div class="tool-demo">
+        <div class="planner-widget">
+          <div class="planner-route">
+            <div class="planner-step">
+              <div class="step-dot"></div>
+              <div class="step-label">Les Houches · Départ</div>
+              <div class="step-data">1 008 m</div>
+            </div>
+            <div class="step-line"></div>
+            <div class="planner-step">
+              <div class="step-dot"></div>
+              <div class="step-label">Refuge de Bellachat</div>
+              <div class="step-data">2 153 m</div>
+            </div>
+            <div class="step-line"></div>
+            <div class="planner-step">
+              <div class="step-dot summit"></div>
+              <div class="step-label">Aiguillette des Houches ⭐</div>
+              <div class="step-data">2 285 m</div>
+            </div>
+          </div>
+          <div class="planner-stats">
+            <div class="planner-stat"><div class="planner-stat-v">1 277</div><div class="planner-stat-l">D+ (m)</div></div>
+            <div class="planner-stat"><div class="planner-stat-v">4h30</div><div class="planner-stat-l">Durée</div></div>
+            <div class="planner-stat"><div class="planner-stat-v">12.4</div><div class="planner-stat-l">km A/R</div></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Conditions neige -->
+    <div class="tool-card premium" onclick="this.classList.toggle('active-tool')">
+      <div class="tool-icon">❄️</div>
+      <span class="tool-badge badge-pro">Pro</span>
+      <div class="tool-name">CONDITIONS NEIGE</div>
+      <div class="tool-desc">Épaisseur du manteau neigeux en temps réel sur les principales stations et zones hors-piste du massif.</div>
+      <div class="tool-demo">
+        <div class="snow-widget">
+          <div class="snow-stations">
+            <div class="snow-station">
+              <div class="snow-name">Les Contamines</div>
+              <div class="snow-bar-wrap"><div class="snow-bar" style="width:85%"></div></div>
+              <div class="snow-val">145 cm</div>
+              <div class="snow-tag tag-good">Excellent</div>
+            </div>
+            <div class="snow-station">
+              <div class="snow-name">Chamonix – Brévent</div>
+              <div class="snow-bar-wrap"><div class="snow-bar" style="width:65%"></div></div>
+              <div class="snow-val">95 cm</div>
+              <div class="snow-tag tag-good">Bon</div>
+            </div>
+            <div class="snow-station">
+              <div class="snow-name">Megève – Rochebrune</div>
+              <div class="snow-bar-wrap"><div class="snow-bar" style="width:42%"></div></div>
+              <div class="snow-val">55 cm</div>
+              <div class="snow-tag tag-ok">Moyen</div>
+            </div>
+            <div class="snow-station">
+              <div class="snow-name">Sallanches – basse vallée</div>
+              <div class="snow-bar-wrap"><div class="snow-bar" style="width:15%"></div></div>
+              <div class="snow-val">12 cm</div>
+              <div class="snow-tag tag-poor">Faible</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Générateur GPX -->
+    <div class="tool-card premium" onclick="this.classList.toggle('active-tool')">
+      <div class="tool-icon">📍</div>
+      <span class="tool-badge badge-pro">Pro</span>
+      <div class="tool-name">GÉNÉRATEUR GPX</div>
+      <div class="tool-desc">Exportez vos itinéraires en fichiers GPX compatibles Garmin, Suunto et toutes montres connectées GPS.</div>
+      <div class="tool-demo">
+        <div class="gps-widget">
+          <div class="gps-map">
+            <div class="gps-map-bg"></div>
+            <div class="gps-path"></div>
+            <div class="gps-pin">📍</div>
+          </div>
+          <div class="gps-info">
+            <div class="gps-chip">🗂 <span>Format :</span> .GPX / .KML</div>
+            <div class="gps-chip">⌚ <span>Compat. :</span> Garmin · Suunto</div>
+            <div class="gps-chip">📱 <span>App :</span> Komoot · Wikiloc</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Bilan CO2 -->
+    <div class="tool-card" onclick="this.classList.toggle('active-tool')">
+      <div class="tool-icon">🌱</div>
+      <span class="tool-badge badge-free">Gratuit</span>
+      <div class="tool-name">BILAN CARBONE TRAJET</div>
+      <div class="tool-desc">Calculez l'empreinte CO₂ de votre trajet jusqu'au départ de randonnée et découvrez des alternatives plus vertes.</div>
+      <div class="tool-demo">
+        <div class="co2-widget">
+          <div style="font-size:12px;color:rgba(232,244,248,0.5);margin-bottom:8px;">Trajet depuis :</div>
+          <div class="co2-options">
+            <button class="co2-opt active" onclick="setCO2(this,'Voiture','18.4 kg CO₂','vs train : +640%')">🚗 Voiture</button>
+            <button class="co2-opt" onclick="setCO2(this,'Train','2.1 kg CO₂','option la plus verte ✓')">🚆 Train</button>
+            <button class="co2-opt" onclick="setCO2(this,'Bus','5.8 kg CO₂','vs voiture : −68%')">🚌 Bus</button>
+            <button class="co2-opt" onclick="setCO2(this,'Avion','82 kg CO₂','non recommandé')">✈️ Avion</button>
+          </div>
+          <div class="co2-result">
+            <div class="co2-value" id="co2-val">18.4</div>
+            <div class="co2-unit" id="co2-unit">kg CO₂ · Paris → Chamonix (aller)</div>
+            <div class="co2-vs" id="co2-vs">vs train : +640%</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ========== DASHBOARD REVENUS ========== -->
+<section>
+  <div class="section-label">Potentiel de revenus</div>
+  <h2 class="section-title">VOTRE REVENU<br>MENSUEL ESTIMÉ</h2>
+  <p class="section-sub">Avec 1 000 utilisateurs actifs, voici la projection de revenus combinés abonnements + sponsors.</p>
+
+  <div class="dashboard">
+    <div class="dashboard-title">📊 TABLEAU DE BORD — SIMULATION (1 000 utilisateurs)</div>
+    <div class="dashboard-kpis">
+      <div class="kpi">
+        <div class="kpi-label">Revenu mensuel</div>
+        <div class="kpi-value">4 850<span style="font-size:18px;color:var(--glacier)">€</span></div>
+        <div class="kpi-delta delta-up">↑ +12% vs mois dernier</div>
+      </div>
+      <div class="kpi">
+        <div class="kpi-label">Abonnés Pro</div>
+        <div class="kpi-value">230</div>
+        <div class="kpi-delta delta-up">↑ +18 ce mois</div>
+      </div>
+      <div class="kpi">
+        <div class="kpi-label">Revenus sponsors</div>
+        <div class="kpi-value">1 400<span style="font-size:18px;color:var(--gold)">€</span></div>
+        <div class="kpi-delta delta-gold">3 sponsors actifs</div>
+      </div>
+      <div class="kpi">
+        <div class="kpi-label">Taux conversion</div>
+        <div class="kpi-value">23<span style="font-size:18px;color:var(--glacier)">%</span></div>
+        <div class="kpi-delta delta-up">↑ freemium → pro</div>
+      </div>
+    </div>
+    <div class="revenue-bars">
+      <div class="rev-row">
+        <div class="rev-label">Abonnements Pro (9€/mois)</div>
+        <div class="rev-bar-wrap"><div class="rev-bar bar-alpine" style="width:72%"></div></div>
+        <div class="rev-amount">2 070€</div>
+      </div>
+      <div class="rev-row">
+        <div class="rev-label">Abonnements Expert (19€/mois)</div>
+        <div class="rev-bar-wrap"><div class="rev-bar bar-alpine" style="width:49%"></div></div>
+        <div class="rev-amount">1 380€</div>
+      </div>
+      <div class="rev-row">
+        <div class="rev-label">Pack sponsor Gold (500€/mois)</div>
+        <div class="rev-bar-wrap"><div class="rev-bar bar-gold" style="width:36%"></div></div>
+        <div class="rev-amount">1 000€</div>
+      </div>
+      <div class="rev-row">
+        <div class="rev-label">Pack sponsor Silver (200€/mois)</div>
+        <div class="rev-bar-wrap"><div class="rev-bar bar-gold" style="width:14%"></div></div>
+        <div class="rev-amount">400€</div>
+      </div>
+    </div>
+    <div style="margin-top:20px;padding-top:16px;border-top:1px solid rgba(168,213,226,0.1);display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:12px;">
+      <div style="font-size:13px;color:rgba(232,244,248,0.4)">Objectif 12 mois : dépasser <strong style="color:var(--glacier)">10 000€/mois</strong> avec 2 500 utilisateurs</div>
+      <div style="font-family:'Bebas Neue',sans-serif;font-size:28px;color:var(--gold)">TOTAL : 4 850€/mois</div>
+    </div>
+  </div>
+</section>
+
+<!-- ========== TARIFS ========== -->
+<section id="tarifs" style="text-align:center;">
+  <div class="section-label">Tarification</div>
+  <h2 class="section-title">CHOISISSEZ<br>VOTRE PLAN</h2>
+  <p class="section-sub" style="margin:0 auto 56px;">Commencez gratuitement, passez Pro quand vous en avez besoin.</p>
+
+  <div class="pricing-grid">
+    <div class="pricing-card">
+      <div class="pricing-plan">Randonneur</div>
+      <div class="pricing-price"><sup>€</sup>0<sub>/mois</sub></div>
+      <div class="pricing-desc">Pour découvrir AlpinTools et planifier vos premières sorties.</div>
+      <ul class="pricing-features">
+        <li>Météo alpine (3 requêtes/jour)</li>
+        <li>Planificateur basique</li>
+        <li>Bilan carbone trajet</li>
+        <li class="off">Conditions neige temps réel</li>
+        <li class="off">Export GPX illimité</li>
+        <li class="off">Alertes météo push</li>
+      </ul>
+      <button class="btn-plan btn-plan-outline" onclick="openModal('signup')">Commencer gratuit</button>
+    </div>
+
+    <div class="pricing-card featured">
+      <div class="pricing-featured-badge">⭐ POPULAIRE</div>
+      <div class="pricing-plan">Alpiniste Pro</div>
+      <div class="pricing-price"><sup>€</sup>9<sub>/mois</sub></div>
+      <div class="pricing-desc">Pour les pratiquants réguliers qui veulent tout maîtriser.</div>
+      <ul class="pricing-features">
+        <li>Météo alpine illimitée</li>
+        <li>Planificateur avancé</li>
+        <li>Bilan carbone trajet</li>
+        <li>Conditions neige temps réel</li>
+        <li>Export GPX illimité</li>
+        <li class="off">Alertes météo push</li>
+      </ul>
+      <button class="btn-plan btn-plan-primary" onclick="openModal('pro')">Démarrer Pro — 9€/mois</button>
+    </div>
+
+    <div class="pricing-card">
+      <div class="pricing-plan">Expert Montagne</div>
+      <div class="pricing-price"><sup>€</sup>19<sub>/mois</sub></div>
+      <div class="pricing-desc">Pour les guides, moniteurs et passionnés exigeants.</div>
+      <ul class="pricing-features">
+        <li>Tout le plan Pro</li>
+        <li>Alertes météo push personnalisées</li>
+        <li>API accès données brutes</li>
+        <li>Multi-itinéraires sauvegardés</li>
+        <li>Support prioritaire</li>
+        <li>Badge Expert visible</li>
+      </ul>
+      <button class="btn-plan btn-plan-outline" onclick="openModal('expert')">Passer Expert</button>
+    </div>
+  </div>
+</section>
+
+<!-- ========== SPONSORS ========== -->
+<section id="sponsors" class="sponsor-section">
+  <div class="section-label">Monétisation sponsors</div>
+  <h2 class="section-title">DEVENEZ<br>PARTENAIRE</h2>
+  <p class="section-sub" style="margin:0 auto;">Touchez une audience qualifiée de passionnés outdoor autour du Mont-Blanc. Visibilité ciblée, résultats mesurables.</p>
+
+  <div class="sponsor-packages">
+    <div class="sponsor-pack">
+      <div class="sponsor-pack-name">Silver</div>
+      <div class="sponsor-pack-price">200€ <span>/mois</span></div>
+      <ul class="sponsor-perks">
+        <li>Logo sur la page d'accueil</li>
+        <li>Mention dans la newsletter mensuelle</li>
+        <li>Lien vers votre site</li>
+      </ul>
+      <button class="btn-sponsor" onclick="openModal('sponsor')">Devenir Silver</button>
+    </div>
+    <div class="sponsor-pack" style="border-color:rgba(244,162,97,0.35)">
+      <div class="sponsor-pack-name">Gold</div>
+      <div class="sponsor-pack-price">500€ <span>/mois</span></div>
+      <ul class="sponsor-perks">
+        <li>Bannière dédiée dans 2 outils</li>
+        <li>Article sponsorisé (1/trimestre)</li>
+        <li>Logo prioritaire + page sponsors</li>
+        <li>Rapport mensuel de visibilité</li>
+      </ul>
+      <button class="btn-sponsor" onclick="openModal('sponsor')">Devenir Gold</button>
+    </div>
+    <div class="sponsor-pack" style="border-color:rgba(232,244,248,0.25)">
+      <div class="sponsor-pack-name">Platine</div>
+      <div class="sponsor-pack-price">1 200€ <span>/mois</span></div>
+      <ul class="sponsor-perks">
+        <li>Outil co-brandé avec votre marque</li>
+        <li>Intégration native dans l'app</li>
+        <li>Contenu vidéo / réels sponsorisés</li>
+        <li>Partenariat exclusif par secteur</li>
+        <li>Accès aux données analytiques</li>
+      </ul>
+      <button class="btn-sponsor" onclick="openModal('sponsor')">Devenir Platine</button>
+    </div>
+  </div>
+</section>
+
+<!-- ========== CTA FINAL ========== -->
+<div class="cta-section">
+  <h2>PRÊT À<br><span class="g">GRAVIR</span><br>LES SOMMETS ?</h2>
+  <p>Rejoignez 2 400+ aventuriers qui planifient mieux grâce à AlpinTools.</p>
+  <div class="cta-input-row">
+    <input class="cta-input" type="email" placeholder="votre@email.com">
+    <button class="btn-primary" onclick="openModal('signup')">Démarrer →</button>
+  </div>
+</div>
+
+<!-- ========== FOOTER ========== -->
+<footer>
+  <div class="logo">⛰ ALPIN<span>TOOLS</span></div>
+  <div>© 2025 AlpinTools · Sallanches, Haute-Savoie · Fait avec ❤️ pour la montagne</div>
+  <div style="display:flex;gap:20px;">
+    <a href="#" style="color:inherit;text-decoration:none;">CGU</a>
+    <a href="#" style="color:inherit;text-decoration:none;">Confidentialité</a>
+    <a href="#" style="color:inherit;text-decoration:none;">Contact</a>
+  </div>
+</footer>
+
+<!-- ========== MODAL ========== -->
+<div class="modal-overlay" id="modal">
+  <div class="modal">
+    <button class="modal-close" onclick="closeModal()">×</button>
+    <div id="modal-content">
+      <h3 id="modal-title">CRÉER UN COMPTE</h3>
+      <p id="modal-desc">Accédez gratuitement à la météo alpine, au planificateur et au bilan carbone.</p>
+      <div class="modal-form">
+        <input class="modal-input" type="text" placeholder="Prénom et nom">
+        <input class="modal-input" type="email" placeholder="Email">
+        <input class="modal-input" type="password" placeholder="Mot de passe" id="pass-field" style="display:none">
+        <button class="btn-primary" style="width:100%;padding:13px;font-size:15px;" onclick="submitModal()">Continuer →</button>
+      </div>
+    </div>
+    <div class="modal-success" id="modal-success">
+      <div class="check">✅</div>
+      <h4>C'EST PARTI !</h4>
+      <p>Vérifiez votre email pour activer votre compte AlpinTools. Bonne montagne ! 🏔</p>
+    </div>
+  </div>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
